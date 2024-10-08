@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geekverse Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/logo.jpg" alt="" class="logo">
+        </a>
+        <nav>
+            <button class="carrinho-header">
+                <img src="assets/carrinho.png" alt="" class="carrinho-img">
+            </button>
+            <a href="login.html">
+                <img src="assets/perfil.png" alt="" class="perfil">
+            </a>
+        </nav>
+    </header>
+    <main class="main-login">
+        <section class="section-formulario">
+            <div class="formulario formulario-login">
+                <div>
+                    <p>Email:</p>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
+                <div>
+                    <p>Senha:</p>
+                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                </div>
+                <div>
+                    <button onclick="login(event)">Login</button>
+                </div>
+                <a href="cadastro.html" class="link-formulario">Cadastrar ao invés de logar</a>
+            </div>
+        </section>
+
+        <span class="modal">
+        </span>
+        <div class="overlay"></div>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+</html>

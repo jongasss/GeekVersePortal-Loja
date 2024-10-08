@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geekverse Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/logo.jpg" alt="" class="logo">
+        </a>
+        <nav>
+            <button class="carrinho-header">
+                <img src="assets/carrinho.png" alt="" class="carrinho-img">
+            </button>
+            <a href="login.html">
+                <img src="assets/perfil.png" alt="" class="perfil">
+            </a>
+        </nav>
+    </header>
+    <main class="main-login">
+        <section class="section-formulario">
+            <div class="formulario formulario-gerenciar-produto">
+                <div>
+                    <p>ID do produto desejado:</p>
+                    <input type="text" name="id" id="id" placeholder="ID">
+                </div>
+                <div>
+                    <p>Novo Nome:</p>
+                    <input type="text" name="nome" id="nome" placeholder="Nome">
+                </div>
+                <div>
+                    <p>Novo Preço:</p>
+                    <input type="text" name="preco" id="preco" placeholder="Preço">
+                </div>
+                <div>
+                    <p>Nova Imagem:</p>
+                    <input type="file" name="img" id="img">
+                </div>
+                <div>
+                    <button onclick="editarProduto(event)">Editar Produto</button>
+                </div>
+                <div class="botao-deletar-div">
+                    <button onclick="deletarProduto(event)" class="botao-deletar">Deletar Produto</button>
+                </div>
+                <a href="criar-produto.html" class="link-formulario">Criar Produto</a>
+            </div>
+        </section>
+
+        <span class="modal">
+        </span>
+        <div class="overlay"></div>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+</html>

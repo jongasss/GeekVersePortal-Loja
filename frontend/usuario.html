@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geekverse Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/logo.jpg" alt="" class="logo">
+        </a>
+        <nav>
+            <button class="carrinho-header">
+                <img src="assets/carrinho.png" alt="" class="carrinho-img">
+            </button>
+            <a href="login.html">
+                <img src="assets/perfil.png" alt="" class="perfil">
+            </a>
+        </nav>
+    </header>
+    <main class="main-index">
+        <section class="section-conta">
+            <div class="informacoesConta">
+                <h2>Informações da conta</h2>
+                <p class="nomeUsuario"></p>
+                <p class="emailUsuario"></p>
+                <div class="botoes-conta">
+                    <a href="gerenciar-conta.html" class="botao-deslogar">Gerenciar Conta</a>
+                    <button onclick="deslogar(event)" class="botao-deslogar">Deslogar</button>
+                </div>
+            </div>
+            <h2>Carrinho</h2>
+            <div class="carrinho-conta">
+            </div>
+            <h2>Favoritos</h2>
+            <div class="favoritos-conta">
+            </div>
+        </section>
+
+        <span class="modal">
+        </span>
+        <div class="overlay"></div>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+</html>
