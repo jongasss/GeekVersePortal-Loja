@@ -2,10 +2,10 @@ const mysql = require("mysql2") // Importa a biblioteca para conectar ao banco d
 
 // Cria a conexão com o banco.
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "loja"
+    host: "sql10.freesqldatabase.com",
+    user: "sql10743723",
+    password: "bCLCZdyni3",
+    database: "sql10743723"
 })
 
 // Conecta, jogando um erro se der errado ou mostrando uma mensagem se der certo
