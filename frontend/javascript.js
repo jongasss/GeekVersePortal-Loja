@@ -32,7 +32,7 @@ async function criarProduto(produto) {
 
   // Imagem
   const imgProduto = document.createElement("img");
-  imgProduto.src = "http://localhost:3000/uploads/" + produto.img;
+  imgProduto.src = "https://geekverseportal-loja.onrender.com/uploads/" + produto.img;
   imgProduto.alt = produto.nome;
   produtoDiv.appendChild(imgProduto);
 
@@ -86,7 +86,7 @@ async function criarProduto(produto) {
 
     // Faz a requsição para ver se o produto é favorito
     const response = await fetch(
-      `http://localhost:3000/produto/favorito?usuario=${usuario.id}&produto=${produto.id}`
+      `https://geekverseportal-loja.onrender.com/produto/favorito?usuario=${usuario.id}&produto=${produto.id}`
     );
     const results = await response.json();
 
@@ -102,7 +102,7 @@ async function criarProduto(produto) {
       if (botaoFavoritos.classList.contains("adicionado-ao-carrinho")) { // Se tiver nos favoritos
         // Tira dos favoritos
         const response = await fetch(
-          `http://localhost:3000/produto/favorito/remover`,
+          `https://geekverseportal-loja.onrender.com/produto/favorito/remover`,
           {
             method: "DELETE",
             headers: {
@@ -121,7 +121,7 @@ async function criarProduto(produto) {
       } else {
         // Adiciona aos favoritos
         const response = await fetch(
-          `http://localhost:3000/produto/favoritar`,
+          `https://geekverseportal-loja.onrender.com/produto/favoritar`,
           {
             method: "POST",
             headers: {
@@ -154,7 +154,7 @@ async function criarProdutoCarrinhoUsuario(produto) {
   produtoDiv.classList.add("produto");
 
   const imgProduto = document.createElement("img");
-  imgProduto.src = "http://localhost:3000/uploads/" + produto.img;
+  imgProduto.src = "https://geekverseportal-loja.onrender.com/uploads/" + produto.img;
   imgProduto.alt = produto.nome;
   produtoDiv.appendChild(imgProduto);
 
@@ -199,7 +199,7 @@ async function criarProdutoCarrinhoUsuario(produto) {
   if (localStorage.getItem("usuario") !== null) {
     const usuario = JSON.parse(localStorage.getItem("usuario"));
     const response = await fetch(
-      `http://localhost:3000/produto/favorito?usuario=${usuario.id}&produto=${produto.id}`
+      `https://geekverseportal-loja.onrender.com/produto/favorito?usuario=${usuario.id}&produto=${produto.id}`
     );
     const results = await response.json();
 
@@ -214,7 +214,7 @@ async function criarProdutoCarrinhoUsuario(produto) {
     botaoFavoritos.onclick = async function () {
       if (botaoFavoritos.classList.contains("adicionado-ao-carrinho")) {
         const response = await fetch(
-          `http://localhost:3000/produto/favorito/remover`,
+          `https://geekverseportal-loja.onrender.com/produto/favorito/remover`,
           {
             method: "DELETE",
             headers: {
@@ -232,7 +232,7 @@ async function criarProdutoCarrinhoUsuario(produto) {
         }
       } else {
         const response = await fetch(
-          `http://localhost:3000/produto/favoritar`,
+          `https://geekverseportal-loja.onrender.com/produto/favoritar`,
           {
             method: "POST",
             headers: {
@@ -269,7 +269,7 @@ function criarProdutoCarrinho(produto) {
   produtoCarrinhoDiv.classList.add("produto-carrinho");
 
   const imgProduto = document.createElement("img");
-  imgProduto.src = "http://localhost:3000/uploads/" + produto.img;
+  imgProduto.src = "https://geekverseportal-loja.onrender.com/uploads/" + produto.img;
   imgProduto.alt = produto.nome;
   produtoCarrinhoDiv.appendChild(imgProduto);
 
@@ -292,7 +292,7 @@ function criarProdutoCarrinho(produto) {
 // Pega os produtos
 async function pegarProdutos() {
   // Pega os produtos
-  const response = await fetch("http://localhost:3000/get/produtos");
+  const response = await fetch("https://geekverseportal-loja.onrender.com/get/produtos");
   const results = await response.json();
 
   if (results.success) {
@@ -372,7 +372,7 @@ async function cadastrar(event) { // Cadastro de usuários
   }
 
   // Se tudo estiver correto, faz o cadastro no banco
-  const response = await fetch("http://localhost:3000/usuario/cadastrar", {
+  const response = await fetch("https://geekverseportal-loja.onrender.com/usuario/cadastrar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -410,7 +410,7 @@ async function login(event) {
 
   // Tenta fazer o login
   const response = await fetch(
-    `http://localhost:3000/usuario/login?email=${email}&senha=${senha}`
+    `https://geekverseportal-loja.onrender.com/usuario/login?email=${email}&senha=${senha}`
   );
 
   const results = await response.json();
@@ -499,7 +499,7 @@ async function cadastrarProduto(event) {
   }
 
   // Tenta fazer o cadastro
-  const response = await fetch("http://localhost:3000/produto/cadastrar", {
+  const response = await fetch("https://geekverseportal-loja.onrender.com/produto/cadastrar", {
     method: "POST",
     body: formData,
   });
@@ -542,7 +542,7 @@ async function editarProduto(event) {
 
   // Tenta editar
   const response = await fetch(
-    "http://localhost:3000/produto/atualizar/" + id,
+    "https://geekverseportal-loja.onrender.com/produto/atualizar/" + id,
     {
       method: "PUT",
       body: formData,
@@ -566,7 +566,7 @@ async function deletarProduto(event) {
   const id = document.getElementById("id").value; // Pega o id
 
   // Tenta deletar
-  const response = await fetch("http://localhost:3000/produto/deletar/" + id, {
+  const response = await fetch("https://geekverseportal-loja.onrender.com/produto/deletar/" + id, {
     method: "DELETE",
   });
 
@@ -627,7 +627,7 @@ async function criarProdutoFavoritosUsuario(produto) {
   produtoDiv.classList.add("produto");
 
   const imgProduto = document.createElement("img");
-  imgProduto.src = "http://localhost:3000/uploads/" + produto.img;
+  imgProduto.src = "https://geekverseportal-loja.onrender.com/uploads/" + produto.img;
   imgProduto.alt = produto.nome;
   produtoDiv.appendChild(imgProduto);
 
@@ -672,7 +672,7 @@ async function criarProdutoFavoritosUsuario(produto) {
   if (localStorage.getItem("usuario") !== null) {
     const usuario = JSON.parse(localStorage.getItem("usuario"));
     const response = await fetch(
-      `http://localhost:3000/produto/favorito?usuario=${usuario.id}&produto=${produto.id}`
+      `https://geekverseportal-loja.onrender.com/produto/favorito?usuario=${usuario.id}&produto=${produto.id}`
     );
     const results = await response.json();
 
@@ -687,7 +687,7 @@ async function criarProdutoFavoritosUsuario(produto) {
     botaoFavoritos.onclick = async function () {
       if (botaoFavoritos.classList.contains("adicionado-ao-carrinho")) {
         const response = await fetch(
-          `http://localhost:3000/produto/favorito/remover`,
+          `https://geekverseportal-loja.onrender.com/produto/favorito/remover`,
           {
             method: "DELETE",
             headers: {
@@ -705,7 +705,7 @@ async function criarProdutoFavoritosUsuario(produto) {
         }
       } else {
         const response = await fetch(
-          `http://localhost:3000/produto/favoritar`,
+          `https://geekverseportal-loja.onrender.com/produto/favoritar`,
           {
             method: "POST",
             headers: {
@@ -741,7 +741,7 @@ async function pegarFavoritos() {
   const id = JSON.parse(localStorage.getItem("usuario")).id; // Pega o usuário
 
   // Verifica os favoritos
-  const response = await fetch("http://localhost:3000/produto/favoritos/" + id);
+  const response = await fetch("https://geekverseportal-loja.onrender.com/produto/favoritos/" + id);
 
   const results = await response.json();
 
@@ -778,7 +778,7 @@ async function alterarConta(event) {
   const cargo = JSON.parse(localStorage.getItem("usuario")).cargo;
 
   // Tenta editar
-  const response = await fetch("http://localhost:3000/usuario/editar/" + id, {
+  const response = await fetch("https://geekverseportal-loja.onrender.com/usuario/editar/" + id, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
